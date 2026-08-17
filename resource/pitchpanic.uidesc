@@ -79,8 +79,8 @@
   </gradients>
 
   <template background-color="Abyss" background-color-draw-style="filled and stroked"
-            class="CViewContainer" frame-color="Grid" frame-width="1" maxSize="620, 390"
-            minSize="620, 390" mouse-enabled="true" name="view" opacity="1"
+            class="CViewContainer" frame-color="Grid" frame-width="1" maxSize="1240, 780"
+            minSize="310, 195" mouse-enabled="true" name="view" opacity="1"
             origin="0, 0" size="620, 390" transparent="false">
 
     <!-- Header / systems strip -->

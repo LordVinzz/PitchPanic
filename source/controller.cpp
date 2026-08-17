@@ -1,5 +1,6 @@
 #include "controller.h"
 
+#include "editor.h"
 #include "parameters.h"
 
 #include "base/source/fstreamer.h"
@@ -188,8 +189,7 @@ IPlugView* PLUGIN_API Controller::createView (FIDString name)
 {
     if (name && std::string_view (name) == ViewType::kEditor)
     {
-        auto* editor = new VSTGUI::AspectRatioVST3Editor (
-            this, "view", "pitchpanic.uidesc");
+        auto* editor = new Editor (this, "view", "pitchpanic.uidesc");
         editor->setMinZoomFactor (0.5);
         return editor;
     }

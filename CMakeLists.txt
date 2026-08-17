@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.25.0)
 
 project(PitchPanicVST3
-    VERSION 1.0.0
+    VERSION 1.0.1
     DESCRIPTION "Whammy, dive-bomb, harmony and octaver VST3 effect"
     LANGUAGES C CXX
 )
@@ -39,6 +39,7 @@ set(PITCHPANIC_SOURCES
     source/cids.h
     source/controller.cpp
     source/controller.h
+    source/editor.h
     source/factory.cpp
     source/parameters.h
     source/pitchengine.cpp
@@ -124,9 +125,10 @@ if(BUILD_TESTING)
         PITCHPANIC_UIDESC_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resource/pitchpanic.uidesc"
     )
     target_include_directories(pitchpanic_ui_smoke PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/source"
         "${VST3_SDK_ROOT}"
         "${VST3_SDK_ROOT}/vstgui4"
     )
-    target_link_libraries(pitchpanic_ui_smoke PRIVATE vstgui vstgui_uidescription)
+    target_link_libraries(pitchpanic_ui_smoke PRIVATE sdk vstgui_support)
     add_test(NAME pitchpanic_ui_smoke COMMAND pitchpanic_ui_smoke)
 endif()
