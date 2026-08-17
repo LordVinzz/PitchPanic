@@ -1,0 +1,8 @@
+/build/
+/build-windows/
+/vst3sdk/
+.DS_Store
+*.user
+*.suo
+*.VC.db
+*.VC.VC.opendb

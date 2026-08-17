@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vstgui-ui-description version="1">
+  <fonts>
+    <font font-name="Arial" name="PanicTiny" size="4"/>
+    <font font-name="Arial" name="PanicSmall" size="5"/>
+    <font bold="true" font-name="Arial" name="PanicNormal" size="6"/>
+    <font bold="true" font-name="Arial" name="PanicBig" size="7"/>
+    <font bold="true" font-name="Arial" name="PanicTitle" size="9"/>
+  </fonts>
+  <colors>
+    <color name="Abyss" rgba="#070a0fff"/>
+    <color name="Panel" rgba="#101720ff"/>
+    <color name="Panel Deep" rgba="#0b1017ff"/>
+    <color name="Grid" rgba="#27343eff"/>
+    <color name="Text" rgba="#edf3f5ff"/>
+    <color name="Dim" rgba="#74858fff"/>
+    <color name="Orange" rgba="#ff5b1fff"/>
+    <color name="Amber" rgba="#ffb000ff"/>
+    <color name="Cyan" rgba="#35e6ffff"/>
+    <color name="Red" rgba="#ff3045ff"/>
+    <color name="Green" rgba="#73ff67ff"/>
+    <color name="Black Glass" rgba="#030507dd"/>
+  </colors>
+
+  <control-tags>
+    <control-tag name="Bypass" tag="0"/>
+    <control-tag name="Mode" tag="1"/>
+    <control-tag name="Pedal" tag="2"/>
+    <control-tag name="Heel" tag="3"/>
+    <control-tag name="Toe" tag="4"/>
+    <control-tag name="Curve" tag="5"/>
+    <control-tag name="Quantize" tag="6"/>
+    <control-tag name="Fine" tag="7"/>
+    <control-tag name="Detune" tag="8"/>
+    <control-tag name="Voice1Shift" tag="9"/>
+    <control-tag name="Voice2Shift" tag="10"/>
+    <control-tag name="Voice1Level" tag="11"/>
+    <control-tag name="Voice2Level" tag="12"/>
+    <control-tag name="Dry" tag="13"/>
+    <control-tag name="Wet" tag="14"/>
+    <control-tag name="Input" tag="15"/>
+    <control-tag name="Output" tag="16"/>
+    <control-tag name="Window" tag="17"/>
+    <control-tag name="Smoothing" tag="18"/>
+    <control-tag name="Feedback" tag="19"/>
+    <control-tag name="Freeze" tag="20"/>
+    <control-tag name="WindowShape" tag="21"/>
+    <control-tag name="Quality" tag="22"/>
+    <control-tag name="Tone" tag="23"/>
+    <control-tag name="LowCut" tag="24"/>
+    <control-tag name="Drive" tag="25"/>
+    <control-tag name="Gate" tag="26"/>
+    <control-tag name="StereoSpread" tag="27"/>
+    <control-tag name="Width" tag="28"/>
+    <control-tag name="AutoAmount" tag="29"/>
+    <control-tag name="Sensitivity" tag="30"/>
+    <control-tag name="Rise" tag="31"/>
+    <control-tag name="Fall" tag="32"/>
+    <control-tag name="AutoDirection" tag="33"/>
+    <control-tag name="LfoRate" tag="34"/>
+    <control-tag name="LfoDepth" tag="35"/>
+    <control-tag name="LfoShape" tag="36"/>
+    <control-tag name="Limiter" tag="37"/>
+  </control-tags>
+
+  <gradients>
+    <gradient name="Switch Off">
+      <color-stop rgba="#202a31ff" start="0"/>
+      <color-stop rgba="#0a0e13ff" start="1"/>
+    </gradient>
+    <gradient name="Switch On">
+      <color-stop rgba="#ffb000ff" start="0"/>
+      <color-stop rgba="#ff4b16ff" start="1"/>
+    </gradient>
+    <gradient name="Danger On">
+      <color-stop rgba="#ff5969ff" start="0"/>
+      <color-stop rgba="#9c071aff" start="1"/>
+    </gradient>
+  </gradients>
+
+  <template background-color="Abyss" background-color-draw-style="filled and stroked"
+            class="CViewContainer" frame-color="Grid" frame-width="1" maxSize="620, 390"
+            minSize="620, 390" mouse-enabled="true" name="view" opacity="1"
+            origin="0, 0" size="620, 390" transparent="false">
+
+    <!-- Header / systems strip -->
+    <view back-color="Panel Deep" class="CTextLabel" font="PanicTitle" font-antialias="true"
+          font-color="Orange" frame-color="Grid" frame-width="1" mouse-enabled="false" opacity="1"
+          origin="9, 7" size="173, 16" style-no-frame="false" text-alignment="left"
+          text-inset="5, 0" title="PITCH PANIC // MK.I" transparent="false"/>
+    <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Dim"
+          frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="14, 25" size="168, 8"
+          style-no-frame="true" text-alignment="left" title="MECHANIZED INTERVAL DISPLACEMENT DEVICE" transparent="true"/>
+
+    <view back-color="Panel" class="CTextLabel" font="PanicSmall" font-color="Amber"
+          frame-color="Grid" frame-width="1" mouse-enabled="false" origin="190, 7" size="125, 9"
+          style-no-frame="false" text-alignment="center" title="OPERATIONAL MODE / ROUTING LAW" transparent="false"/>
+    <view back-color="Black Glass" class="COptionMenu" control-tag="Mode" font="PanicSmall"
+          font-color="Text" frame-color="Orange" frame-width="1" menu-check-style="true"
+          menu-popup-style="true" mouse-enabled="true" origin="190, 17" round-rect-radius="2"
+          size="125, 16" style-no-frame="false" text-alignment="center" transparent="false" wants-focus="true"/>
+
+    <view back-color="Panel" class="CTextLabel" font="PanicSmall" font-color="Cyan"
+          frame-color="Grid" frame-width="1" mouse-enabled="false" origin="321, 7" size="95, 9"
+          style-no-frame="false" text-alignment="center" title="INTERPOLATION REACTOR" transparent="false"/>
+    <view back-color="Black Glass" class="COptionMenu" control-tag="Quality" font="PanicTiny"
+          font-color="Text" frame-color="Cyan" frame-width="1" menu-check-style="true" menu-popup-style="true"
+          mouse-enabled="true" origin="321, 17" size="95, 16" style-no-frame="false"
+          text-alignment="center" transparent="false" wants-focus="true"/>
+
+    <view back-color="Panel" class="CTextLabel" font="PanicSmall" font-color="Cyan"
+          frame-color="Grid" frame-width="1" mouse-enabled="false" origin="422, 7" size="93, 9"
+          style-no-frame="false" text-alignment="center" title="GRAIN WINDOW TOPOLOGY" transparent="false"/>
+    <view back-color="Black Glass" class="COptionMenu" control-tag="WindowShape" font="PanicTiny"
+          font-color="Text" frame-color="Cyan" frame-width="1" menu-check-style="true" menu-popup-style="true"
+          mouse-enabled="true" origin="422, 17" size="93, 16" style-no-frame="false"
+          text-alignment="center" transparent="false" wants-focus="true"/>
+
+    <view back-color="Panel" class="CTextLabel" font="PanicSmall" font-color="Green"
+          frame-color="Grid" frame-width="1" mouse-enabled="false" origin="521, 7" size="91, 9"
+          style-no-frame="false" text-alignment="center" title="MIDI REMOTE BUS" transparent="false"/>
+    <view back-color="Black Glass" class="CTextLabel" font="PanicSmall" font-color="Green"
+          frame-color="Green" frame-width="1" mouse-enabled="false" origin="521, 17" size="91, 16"
+          style-no-frame="false" text-alignment="center" title="CC11 + PITCH BEND" transparent="false"/>
+
+    <!-- Expression pedal bay -->
+    <view back-color="Panel" class="CViewContainer" frame-color="Orange" frame-width="1"
+          mouse-enabled="true" origin="9, 41" size="103, 340" transparent="false">
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicNormal" font-color="Orange"
+            frame-color="Grid" frame-width="1" mouse-enabled="false" origin="4, 4" size="94, 12"
+            text-alignment="center" title="EXPRESSION TREADLE" transparent="false"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Dim"
+            frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="6, 19" size="91, 8"
+            style-no-frame="true" text-alignment="center" title="SAMPLE-ACCURATE CONTROL BUS 02" transparent="true"/>
+      <view class="CSlider" control-tag="Pedal" draw-back="true" draw-back-color="Grid"
+            draw-frame="true" draw-frame-color="Orange" draw-value="true" draw-value-color="Orange"
+            free-click="true" max-value="1" min-value="0" mode="free click" mouse-enabled="true"
+            orientation="vertical" origin="29, 31" reverse-orientation="false" size="45, 194"
+            transparent="false" transparent-handle="false" wheel-inc-value="0.01" zoom-factor="10"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Pedal" font="PanicBig"
+            font-color="Amber" frame-color="Orange" frame-width="1" immediate-text-change="false"
+            mouse-enabled="true" origin="16, 230" round-rect-radius="3" size="70, 17"
+            style-no-frame="false" text-alignment="center" transparent="false" value-precision="1"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Dim"
+            frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="11, 249" size="80, 7"
+            style-no-frame="true" text-alignment="center" title="HEEL 0.000 // TOE 1.000" transparent="true"/>
+
+      <view class="CTextButton" control-tag="Quantize" font="PanicSmall" frame-color="Grid"
+            frame-color-highlighted="Amber" frame-width="1" gradient="Switch Off" gradient-highlighted="Switch On"
+            kick-style="false" mouse-enabled="true" origin="9, 263" round-radius="3" size="84, 17"
+            text-alignment="center" text-color="Text" text-color-highlighted="Abyss"
+            title="CHROMATIC LOCK" transparent="false"/>
+      <view class="CTextButton" control-tag="Freeze" font="PanicSmall" frame-color="Grid"
+            frame-color-highlighted="Cyan" frame-width="1" gradient="Switch Off" gradient-highlighted="Switch On"
+            kick-style="false" mouse-enabled="true" origin="9, 283" round-radius="3" size="84, 17"
+            text-alignment="center" text-color="Text" text-color-highlighted="Abyss"
+            title="BUFFER FREEZE" transparent="false"/>
+      <view class="CTextButton" control-tag="Bypass" font="PanicBig" frame-color="Red"
+            frame-color-highlighted="Red" frame-width="2" gradient="Switch Off" gradient-highlighted="Danger On"
+            kick-style="false" mouse-enabled="true" origin="9, 306" round-radius="8" size="84, 26"
+            text-alignment="center" text-color="Red" text-color-highlighted="Text"
+            title="HARD BYPASS" transparent="false"/>
+    </view>
+
+    <!-- Pitch vector panel -->
+    <view back-color="Panel" class="CViewContainer" frame-color="Grid" frame-width="1"
+          mouse-enabled="true" origin="118, 41" size="238, 163" transparent="false">
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicNormal" font-color="Amber"
+            frame-color="Grid" frame-width="1" mouse-enabled="false" origin="4, 4" size="229, 12"
+            text-alignment="left" text-inset="4, 0" title="01 // PITCH VECTOR COORDINATE MATRIX" transparent="false"/>
+
+      <!-- HEEL -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Heel"
+            corona-color="Amber" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="9, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss"
+            frame-width="0" mouse-enabled="false" origin="5, 58" size="39, 8" style-no-frame="true" text-alignment="center" title="HEEL ST" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Heel" font="PanicTiny" font-color="Amber"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="6, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <!-- TOE -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Toe"
+            corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="55, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss"
+            frame-width="0" mouse-enabled="false" origin="51, 58" size="39, 8" style-no-frame="true" text-alignment="center" title="TOE ST" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Toe" font="PanicTiny" font-color="Orange"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="53, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <!-- CURVE -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Curve"
+            corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="101, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss"
+            frame-width="0" mouse-enabled="false" origin="97, 58" size="39, 8" style-no-frame="true" text-alignment="center" title="CURVATURE" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Curve" font="PanicTiny" font-color="Cyan"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="99, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <!-- FINE -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Fine"
+            corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="147, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss"
+            frame-width="0" mouse-enabled="false" origin="143, 58" size="39, 8" style-no-frame="true" text-alignment="center" title="FINE CENT" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Fine" font="PanicTiny" font-color="Cyan"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="144, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <!-- DETUNE -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Detune"
+            corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="193, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss"
+            frame-width="0" mouse-enabled="false" origin="189, 58" size="39, 8" style-no-frame="true" text-alignment="center" title="DETUNE" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Detune" font="PanicTiny" font-color="Green"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="191, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <!-- VOICE SHIFT ROW -->
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Voice1Shift"
+            corona-color="Amber" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="32, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0"
+            mouse-enabled="false" origin="24, 121" size="47, 8" style-no-frame="true" text-alignment="center" title="VOICE 1 SHIFT" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Voice1Shift" font="PanicTiny" font-color="Amber"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="29, 129" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Voice2Shift"
+            corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text"
+            handle-line-width="2" mouse-enabled="true" origin="103, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0"
+            mouse-enabled="false" origin="95, 121" size="47, 8" style-no-frame="true" text-alignment="center" title="VOICE 2 SHIFT" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Voice2Shift" font="PanicTiny" font-color="Orange"
+            frame-color="Grid" frame-width="1" mouse-enabled="true" origin="101, 129" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view auto-height="false" back-color="Black Glass" class="CMultiLineTextLabel" font="PanicTiny" font-color="Dim" frame-color="Grid" line-layout="clip"
+            frame-width="1" mouse-enabled="false" origin="159, 93" size="66, 45" text-alignment="left" text-inset="4, 0"
+            title="VECTOR BUS\nRANGE: +/- 48 ST\nCONTROL: 32-BIT\nRAMP: PER-SAMPLE\nGUARD: ACTIVE" transparent="false"/>
+    </view>
+
+    <!-- Voice / grain panel -->
+    <view back-color="Panel" class="CViewContainer" frame-color="Grid" frame-width="1"
+          mouse-enabled="true" origin="361, 41" size="250, 163" transparent="false">
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicNormal" font-color="Cyan"
+            frame-color="Grid" frame-width="1" mouse-enabled="false" origin="4, 4" size="242, 12"
+            text-alignment="left" text-inset="4, 0" title="02 // MULTI-HEAD GRANULAR TRANSMISSION" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Voice1Level" corona-color="Amber" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="9, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="4, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="VOICE 1 LVL" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Voice1Level" font="PanicTiny" font-color="Amber" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="6, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Voice2Level" corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="58, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="53, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="VOICE 2 LVL" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Voice2Level" font="PanicTiny" font-color="Orange" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="56, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Window" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="107, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="101, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="WINDOW MS" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Window" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="104, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Smoothing" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="156, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="151, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="MOMENTUM" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Smoothing" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="154, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Feedback" corona-color="Red" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="205, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="199, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="REGEN %" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Feedback" font="PanicTiny" font-color="Red" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="203, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Dry" corona-color="Dim" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="9, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="4, 121" size="42, 8" style-no-frame="true" text-alignment="center" title="DRY MATRIX" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Dry" font="PanicTiny" font-color="Dim" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="6, 130" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Wet" corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="58, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="53, 121" size="42, 8" style-no-frame="true" text-alignment="center" title="WET MATRIX" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Wet" font="PanicTiny" font-color="Orange" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="56, 130" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="StereoSpread" corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="107, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="101, 121" size="42, 8" style-no-frame="true" text-alignment="center" title="L/R DETUNE" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="StereoSpread" font="PanicTiny" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="104, 130" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Width" corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="156, 89" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="151, 121" size="42, 8" style-no-frame="true" text-alignment="center" title="WET WIDTH" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Width" font="PanicTiny" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="154, 130" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view auto-height="false" back-color="Black Glass" class="CMultiLineTextLabel" font="PanicTiny" font-color="Dim" frame-color="Grid" frame-width="1" line-layout="clip" mouse-enabled="false" origin="201, 91" size="40, 49" text-alignment="center" title="HEAD A\nHEAD B\nPHASE 180\nRING 250MS\nFEEDBACK\nCLAMPED" transparent="false"/>
+    </view>
+
+    <!-- Spectral / dynamics panel -->
+    <view back-color="Panel" class="CViewContainer" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="118, 209" size="293, 171" transparent="false">
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicNormal" font-color="Red" frame-color="Grid" frame-width="1" mouse-enabled="false" origin="4, 4" size="284, 12" text-alignment="left" text-inset="4, 0" title="03 // SPECTRAL DAMAGE + LEVEL CONTAINMENT" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Input" corona-color="Amber" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="9, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="4, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="INPUT DB" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Input" font="PanicTiny" font-color="Amber" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="6, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Drive" corona-color="Red" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="58, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="52, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="DRIVE DB" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Drive" font="PanicTiny" font-color="Red" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="55, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="LowCut" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="106, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="101, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="HIGH PASS" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="LowCut" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="104, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Tone" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="154, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="149, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="LOW PASS" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Tone" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="152, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Gate" corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="203, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="198, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="GATE DB" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Gate" font="PanicTiny" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="201, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Output" corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="251, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="246, 58" size="42, 8" style-no-frame="true" text-alignment="center" title="OUTPUT DB" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Output" font="PanicTiny" font-color="Orange" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="249, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Limiter" corona-color="Red" corona-drawing="true" corona-inset="8" corona-outline="true" handle-color="Text" handle-line-width="3" mouse-enabled="true" origin="22, 96" size="39, 39" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Red" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="16, 136" size="52, 8" style-no-frame="true" text-alignment="center" title="CONTAINMENT" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Limiter" font="PanicSmall" font-color="Red" frame-color="Red" frame-width="1" mouse-enabled="true" origin="24, 146" size="36, 12" text-alignment="center" transparent="false"/>
+
+      <view auto-height="false" back-color="Black Glass" class="CMultiLineTextLabel" font="PanicTiny" font-color="Dim" frame-color="Grid" frame-width="1" line-layout="clip" mouse-enabled="false" origin="76, 94" size="204, 66" text-alignment="left" text-inset="5, 0" title="SIGNAL CHAIN TELEMETRY\n01 INPUT TRIM  >  02 SOFT SATURATION  >  03 GATE\n04 DUAL ROTATING READ HEADS  >  05 HP / LP\n06 MID-SIDE WIDTH  >  07 DRY/WET MATRIX  >  08 OUTPUT\n09 HARD CEILING  >  10 THREE-MILLISECOND BYPASS CROSSFADE\n\nNON-FINITE SAMPLE INTERCEPT: ARMED // FEEDBACK CLAMP: +/- 2.0" transparent="false"/>
+    </view>
+
+    <!-- Automation panel -->
+    <view back-color="Panel" class="CViewContainer" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="416, 209" size="195, 171" transparent="false">
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicNormal" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="false" origin="4, 4" size="187, 12" text-alignment="left" text-inset="4, 0" title="04 // AUTONOMOUS PEDAL INJECTION" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="AutoAmount" corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="6, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="1, 58" size="40, 8" style-no-frame="true" text-alignment="center" title="ENV AMOUNT" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="AutoAmount" font="PanicTiny" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="4, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Sensitivity" corona-color="Green" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="44, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="39, 58" size="40, 8" style-no-frame="true" text-alignment="center" title="SENSE DB" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Sensitivity" font="PanicTiny" font-color="Green" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="41, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Rise" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="82, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="78, 58" size="40, 8" style-no-frame="true" text-alignment="center" title="RISE MS" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Rise" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="79, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="Fall" corona-color="Cyan" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="120, 26" size="31, 31" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="116, 58" size="40, 8" style-no-frame="true" text-alignment="center" title="FALL MS" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="Fall" font="PanicTiny" font-color="Cyan" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="118, 67" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view back-color="Black Glass" class="COptionMenu" control-tag="AutoDirection" font="PanicTiny" font-color="Text" frame-color="Green" frame-width="1" menu-check-style="true" menu-popup-style="true" mouse-enabled="true" origin="158, 31" size="34, 32" text-alignment="center" transparent="false" wants-focus="true"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicTiny" font-color="Dim" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="155, 67" size="39, 11" style-no-frame="true" text-alignment="center" title="POLARITY" transparent="true"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="LfoRate" corona-color="Amber" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="24, 94" size="36, 36" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="19, 131" size="45, 8" style-no-frame="true" text-alignment="center" title="LFO RATE" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="LfoRate" font="PanicTiny" font-color="Amber" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="24, 141" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view angle-range="270" angle-start="135" circle-drawing="true" class="CKnob" control-tag="LfoDepth" corona-color="Orange" corona-drawing="true" corona-inset="7" corona-outline="true" handle-color="Text" handle-line-width="2" mouse-enabled="true" origin="77, 94" size="36, 36" transparent="true" zoom-factor="10"/>
+      <view back-color="Abyss" class="CTextLabel" font="PanicSmall" font-color="Text" frame-color="Abyss" frame-width="0" mouse-enabled="false" origin="73, 131" size="45, 8" style-no-frame="true" text-alignment="center" title="LFO DEPTH" transparent="true"/>
+      <view back-color="Black Glass" class="CTextEdit" control-tag="LfoDepth" font="PanicTiny" font-color="Orange" frame-color="Grid" frame-width="1" mouse-enabled="true" origin="77, 141" size="36, 11" text-alignment="center" transparent="false"/>
+
+      <view back-color="Panel Deep" class="CTextLabel" font="PanicTiny" font-color="Amber" frame-color="Grid" frame-width="1" mouse-enabled="false" origin="126, 91" size="63, 9" text-alignment="center" title="LFO GEOMETRY" transparent="false"/>
+      <view back-color="Black Glass" class="COptionMenu" control-tag="LfoShape" font="PanicTiny" font-color="Text" frame-color="Orange" frame-width="1" menu-check-style="true" menu-popup-style="true" mouse-enabled="true" origin="126, 101" size="63, 18" text-alignment="center" transparent="false" wants-focus="true"/>
+      <view auto-height="false" back-color="Black Glass" class="CMultiLineTextLabel" font="PanicTiny" font-color="Dim" frame-color="Grid" frame-width="1" line-layout="clip" mouse-enabled="false" origin="126, 124" size="63, 29" text-alignment="center" title="PEDAL SUM BUS\nMANUAL + ENV + LFO\nCLAMP 0.0 / 1.0" transparent="false"/>
+    </view>
+  </template>
+</vstgui-ui-description>

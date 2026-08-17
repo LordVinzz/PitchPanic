@@ -1,0 +1,92 @@
+name: Build and release VST3
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  VST3_SDK_COMMIT: 58f8da7936800732561402d7936584ca4505de07
+
+jobs:
+  macos:
+    name: macOS universal
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned VST3 SDK
+        run: |
+          git clone --recursive https://github.com/steinbergmedia/vst3sdk.git vst3sdk
+          git -C vst3sdk checkout "$VST3_SDK_COMMIT"
+          git -C vst3sdk submodule update --init --recursive
+      - name: Configure
+        run: >-
+          cmake -S . -B build -G Xcode
+          -DVST3_SDK_ROOT="$PWD/vst3sdk"
+          -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"
+          -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+          -DBUILD_TESTING=ON
+      - name: Build and validate
+        run: cmake --build build --config Release --target PitchPanicBundle pitchpanic_dsp_smoke pitchpanic_ui_smoke
+      - name: Test
+        run: ctest --test-dir build --build-config Release --output-on-failure
+      - name: Verify architectures and signature
+        run: |
+          lipo -archs "build/VST3/Release/Pitch Panic.vst3/Contents/MacOS/Pitch Panic"
+          codesign --verify --deep --strict --verbose=2 "build/VST3/Release/Pitch Panic.vst3"
+      - name: Package
+        run: ditto -c -k --sequesterRsrc --keepParent "build/VST3/Release/Pitch Panic.vst3" Pitch-Panic-macOS-universal.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Pitch-Panic-macOS-universal
+          path: Pitch-Panic-macOS-universal.zip
+          if-no-files-found: error
+
+  windows:
+    name: Windows x64
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned VST3 SDK
+        shell: pwsh
+        run: |
+          git clone --recursive https://github.com/steinbergmedia/vst3sdk.git vst3sdk
+          git -C vst3sdk checkout $env:VST3_SDK_COMMIT
+          git -C vst3sdk submodule update --init --recursive
+      - name: Configure
+        shell: pwsh
+        run: cmake -S . -B build -A x64 -DVST3_SDK_ROOT="$pwd/vst3sdk" -DBUILD_TESTING=ON
+      - name: Build and validate
+        run: cmake --build build --config Release --target PitchPanic pitchpanic_dsp_smoke pitchpanic_ui_smoke
+      - name: Test
+        run: ctest --test-dir build --build-config Release --output-on-failure
+      - name: Package
+        shell: pwsh
+        run: Compress-Archive -Path "build/VST3/Release/Pitch Panic.vst3" -DestinationPath Pitch-Panic-Windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Pitch-Panic-Windows-x64
+          path: Pitch-Panic-Windows-x64.zip
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [macos, windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --repo "$GITHUB_REPOSITORY" --generate-notes --verify-tag
