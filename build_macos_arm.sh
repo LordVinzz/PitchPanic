@@ -32,4 +32,4 @@ ctest --test-dir "${PROJECT_DIR}/build" --build-config Release --output-on-failu
 
 echo
 echo "Pitch Panic build, validation, and smoke tests completed."
-find "${PROJECT_DIR}/build" -type d -name "Pitch Panic.vst3" -print
+find "${PROJECT_DIR}/build" -type d -name "PitchPanic.vst3" -print

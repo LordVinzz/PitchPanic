@@ -19,4 +19,4 @@ cmake --build $BuildDir --config Release --target PitchPanic pitchpanic_dsp_smok
 ctest --test-dir $BuildDir --build-config Release --output-on-failure
 
 Write-Host "Pitch Panic Windows build and tests completed."
-Get-ChildItem $BuildDir -Directory -Filter "Pitch Panic.vst3" -Recurse | Select-Object -ExpandProperty FullName
+Get-ChildItem $BuildDir -Directory -Filter "PitchPanic.vst3" -Recurse | Select-Object -ExpandProperty FullName

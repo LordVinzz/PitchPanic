@@ -23,7 +23,7 @@ Tagged versions automatically publish two archives on the GitHub Releases page:
 - `Pitch-Panic-macOS-universal.zip` (Apple Silicon and Intel)
 - `Pitch-Panic-Windows-x64.zip`
 
-Extract the archive and install `Pitch Panic.vst3` in the standard VST3 directory for your platform.
+Extract the archive and install `PitchPanic.vst3` in the standard VST3 directory for your platform.
 
 ## Build locally
 
@@ -33,13 +33,13 @@ Requirements: CMake 3.25+, Xcode Command Line Tools, Git, and a recursive Steinb
 ./build_macos_arm.sh
 ```
 
-The script reuses `../vst3sdk` when present, completes missing SDK submodules, builds the plug-in, runs Steinberg's VST3 validator as a post-build step, and runs the standalone DSP smoke test. The resulting bundle is printed at the end (normally under `build/VST3/Release/Pitch Panic.vst3`).
+The script reuses `../vst3sdk` when present, completes missing SDK submodules, builds the plug-in, runs Steinberg's VST3 validator as a post-build step, and runs the standalone DSP smoke test. The resulting bundle is printed at the end (normally under `build/VST3/Release/PitchPanic.vst3`).
 
 To install it for the current user:
 
 ```bash
 mkdir -p ~/Library/Audio/Plug-Ins/VST3
-cp -R "build/VST3/Release/Pitch Panic.vst3" ~/Library/Audio/Plug-Ins/VST3/
+cp -R "build/VST3/Release/PitchPanic.vst3" ~/Library/Audio/Plug-Ins/VST3/
 ```
 
 Rescan VST3 plug-ins in the DAW, insert **Pitch Panic**, and assign a physical expression pedal to CC11 for pedal-style operation.

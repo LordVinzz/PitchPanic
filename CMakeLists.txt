@@ -50,7 +50,7 @@ set(PITCHPANIC_SOURCES
 )
 
 smtg_add_vst3plugin(PitchPanic
-    PACKAGE_NAME "Pitch Panic"
+    PACKAGE_NAME "PitchPanic"
     SOURCES_LIST ${PITCHPANIC_SOURCES}
 )
 
